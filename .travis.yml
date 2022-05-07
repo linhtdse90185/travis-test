@@ -19,5 +19,5 @@ script:
   - docker tag simple-node tdlinh89/simple-node:latest
 
 after_success:
-  - echo "Satthat1258" | docker login -u "tdlinh89" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push tdlinh89/simple-node
